@@ -1,0 +1,39 @@
+ # Server codes
+ # index.js code
+ const express = require("express");
+const cors = require("cors");
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.get("/", (req, res) => {
+    res.send("Backend running successfully");
+});
+
+app.listen(5000, () => {
+    console.log("Server running on port 5000");
+});
+
+# package.json code
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "firebase-admin": "^13.9.0",
+    "razorpay": "^2.9.6"
+  }
+}
